@@ -279,11 +279,11 @@ position:relative;
     border:none;
     box-sizing:border-box;
     text-decoration:none;
+   text-align: center;
     
 }
 #searching::placeholder{
- text-align:center;
-   
+  
 }
 
 
@@ -309,6 +309,7 @@ textarea:focus, input:focus{
     overflow-y:scroll;
     display:flex;
     background-color: brown;
+    overflow:auto;
 }
 #pictures{
     padding:1em;
