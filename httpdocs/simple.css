@@ -1,0 +1,26 @@
+html{
+margin:0;
+padding:0;
+width: 100%;
+overflow:hidden;
+height:100%;
+};
+
+body{
+min-height:100%;
+margin-left:auto;
+margin-right:auto;
+display:table-cell;
+vertical-align:middle;  
+}
+
+#masterBox{
+display:flex;
+position:relative;
+flex-direction:column;
+border-radius:7px 7px 7px 7px;
+overflow:hidden;
+height:40em;
+width:40em;
+background-color:bisque;
+}
