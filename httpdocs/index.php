@@ -32,6 +32,7 @@
                                      <input id='searching' type="text"  placeholder="Αναζήτηση" maxlength="10" onkeyup="searchThis(this.value)"/>
                          </div>
                         <div id="list">
+                            <ul id="ulsList"></ul>
                         </div>
                  </div>
 
@@ -49,5 +50,6 @@
 
 
 </main>
+<script src="search.js"></script>
 </body>
 </html>
