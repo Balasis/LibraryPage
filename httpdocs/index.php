@@ -25,6 +25,7 @@
 
     <div id="optionTab">
         <div id="search">
+        <input id='searching' type="text"  placeholder="Αναζήτηση" maxlength="10" onkeyup="searchThis(this.value)">
         </div>
         <div id="list">
         </div>

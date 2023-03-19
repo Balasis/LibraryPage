@@ -97,6 +97,19 @@ border-radius:7px 7px 0px 0px;
     background-color: blueviolet;
     border-radius:0px 0px 0px 7px;
 }
+
+#search{
+    display:block;
+    width:100%;
+    background-color:white;
+    border-bottom:1px solid black;
+    height:2em;
+    
+}
+#list{
+
+}
+
 #viewTab{
     z-index:25;
     display:flex;
@@ -104,11 +117,22 @@ border-radius:7px 7px 0px 0px;
     flex-grow:1;
     background-color:aliceblue;
     border-radius:0px 0px 7px 0px;
+    height:100%;
 }
-#search{
-    display:block;
-    width:100%;
-    background-color:white;
+#description{
+    padding:1em;
+    box-sizing:border-box;
     border-bottom:1px solid black;
-    height:2em;
+    height:50%;
+    overflow-y:scroll;
+    display:flex;
+    background-color: brown;
 }
+#pictures{
+    padding:1em;
+    display:flex;
+    height:50%;
+    background-color:blue;
+    box-sizing:border-box;
+}
+
