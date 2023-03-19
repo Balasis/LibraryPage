@@ -19,7 +19,12 @@
     <main>
 <div id="masterBox" >
     <div id="light"></div>
-<div id="upperSearch">
+<div id="upperSearch"> 
+      <?php 
+      include_once "categories.php";
+      ?>
+
+
 </div>
 <div id="lowerSearch">
 
