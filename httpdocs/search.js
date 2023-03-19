@@ -14,11 +14,12 @@ function langSent(get) {
     xmlhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         console.log(this.responseText);
-        document.getElementById("ulsList").innerHTML = this.responseText;
+        var escaping=this.responseText;/*Did it through php but nvm let it be*/
+        document.getElementById("ulsList").innerHTML = escaping;
       }
     };
     
-    console.log(get);
+  
     xmlhttp.open("GET", "listReq?q=" + get, true);
     xmlhttp.send();
   }

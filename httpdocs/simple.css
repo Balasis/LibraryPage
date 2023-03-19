@@ -194,14 +194,50 @@ position:relative;
    align-content:center;
    justify-content:center;
    border:1px solid black;
-   transition:all 0.3s ease-in-out ;
+   transition:all 0.2s ease-in-out ;
 }
 .lang:hover{
   transform:scale(1.3);
   color:white;
 }
 
+#list{
+    display:flex;
+    height:100%;
+    flex-direction:column;
+    text-align:center;
+    justify-content:center;
+    width:100%
+}
 
+#ulsList{
+    display:table-column;
+    box-sizing:border-box;
+    padding:0;
+   
+    height:100%;
+    width:100%;
+    color:white;
+
+}
+#ulsList li{
+    list-style-type:none;
+    
+    width:100%;
+    border-bottom:1px solid black;
+    
+}
+
+.listLi{
+    height:2.5em;
+    cursor:grab;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-family:comic;
+    display:flex;
+}
 
 
 
@@ -235,21 +271,26 @@ position:relative;
     border-bottom:1px solid black;
     height:2em;
     
+    
 }
 #searching{
     width:100%;
     height:100%;
     border:none;
-    padding-left:2.5em;
-    box-sizing: border-box;
+    box-sizing:border-box;
     text-decoration:none;
+    
 }
+#searching::placeholder{
+ text-align:center;
+   
+}
+
+
 textarea:focus, input:focus{
     outline: none;
 }
-#list{
 
-}
 
 #viewTab{
     z-index:25;

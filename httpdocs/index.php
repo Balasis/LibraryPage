@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <style></style>
+    <style>	</style>
 <title>My Code Library</title>
 <link rel="stylesheet" href="simple.css" type="text/css"/>
 <meta name="author" content="John Balasis" />
@@ -29,7 +29,7 @@
     
                 <div id="optionTab">
                         <div id="search">
-                                     <input id='searching' type="text"  placeholder="Αναζήτηση" maxlength="10" onkeyup="searchThis(this.value)"/>
+                                     <input id='searching' type="text"  placeholder="Search" maxlength="10" onkeyup="searchThis(this.value)"/>
                          </div>
                         <div id="list">
                             <ul id="ulsList"></ul>
