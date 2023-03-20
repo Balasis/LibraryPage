@@ -7,8 +7,10 @@
     <style>	</style>
 <title>My Code Library</title>
 <link rel="stylesheet" href="simple.css" type="text/css"/>
+<link rel="icon" href="img/github.png" type="image/icon type">
 <meta name="author" content="John Balasis" />
 <meta name="viewport" content="width=device-width , initial-scale=1"/>
+
 <meta http-equiv="refresh" content="9000"/>
 <meta charset="UTF-8" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
