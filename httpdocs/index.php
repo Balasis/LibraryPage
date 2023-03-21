@@ -31,7 +31,7 @@
     
                 <div id="optionTab">
                         <div id="search">
-                                     <input id='searching' type="text"  placeholder="Search" maxlength="14" onkeyup="searchThis(this.value)"/>
+                                     <input id='searching' type="text"  placeholder="Search" maxlength="14" onkeyup="searchThis(this.value);"/>
                          </div>
                         <div id="list">
                             <ul id="ulsList"></ul>

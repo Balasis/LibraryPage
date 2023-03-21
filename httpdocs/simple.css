@@ -5,7 +5,7 @@ width: 100%;
 overflow-x:hidden;
 height:100%;
 display:table;
-
+background-color: rgb(0, 0, 0);
 
 }
 
@@ -59,36 +59,40 @@ animation-duration:10s;
 animation-iteration-count:infinite;
     display:block;
     position:absolute;
-   color:white;
-   background-color:white;
+  
     
-    box-shadow:0px 0px 2px 4px white;
+
+    box-shadow:0px 0px 3px 4px rgb(4, 192, 195);
     border-radius:360%;
 }
 @keyframes LogoGlide{
-    0% { margin-top:0;margin-left:0%;width:1em;height:0em;}
+    0% { margin-top:0;margin-left:0%;width:2em;height:0em;box-shadow:0px 0px 3px 4px rgb(4, 192, 195);}
 
-    24% { margin-top:0;margin-left:98%;width:1em;height:0em;}
-    26% { margin-top:0;margin-left:100%;width:0em;height:1em;}
+    24% { margin-top:0;margin-left:98%;width:2em;height:0em;box-shadow:0px 0px 3px 4px rgb(15, 0, 108);}
+    26% { margin-top:0;margin-left:100%;width:0em;height:2em;}
 
-    49% { margin-top:48%;margin-left:100%;width:0em;height:1em;}
-    51% { margin-top:50%;margin-left:100%;width:1em;height:0em;}
+    49% { margin-top:48%;margin-left:100%;width:0em;height:2em;box-shadow:0px 0px 3px 4px rgb(195, 52, 4);}
+    51% { margin-top:50%;margin-left:100%;width:2em;height:0em;}
 
-    74% { margin-top:50%;margin-left:1%;width:1em;height:0em;}
-    76% { margin-top:50%;margin-left:0;width:0em;height:1em;}
+    74% { margin-top:50%;margin-left:1%;width:2em;height:0em;box-shadow:0px 0px 3px 4px rgb(4, 195, 87);}
+    76% { margin-top:50%;margin-left:0;width:0em;height:2em;}
 
-    98% { margin-top: 1%;margin-left:0;width:0em;height:1em;}
-    100% { margin-top:0;margin-left:0;width:1em;height:0em;}
+    98% { margin-top: 1%;margin-left:0;width:0em;height:2em;}
+    100% { margin-top:0;margin-left:0;width:2em;height:0em;box-shadow:0px 0px 3px 4px rgb(4, 192, 195);}
   
 }
 #upperSearch{
 display:flex;
 border-bottom:1px solid black;
 height:4em;
-background-color:red;
+background-color:rgb(0, 0, 0);
 z-index:35;
 border-radius:7px 7px 0px 0px;
 position:relative;
+background-image:url('img/up.png');
+background-size:50% 100%;
+background-position:3% 0%;
+background-repeat:no-repeat;
 }
 .xalia{
     display:flex;
@@ -98,6 +102,7 @@ position:relative;
     flex-direction:column; 
    text-align:center;
     justify-content:center;
+    font-family: 'Comic Sans MS',Comic Sans MS;
 }
 
 #allLang{
@@ -109,7 +114,8 @@ position:relative;
     position:absolute;
     bottom:0;
     right:0;
-    background-color:yellow;
+
+    background-color:rgb(94, 83, 81);
     cursor:grab;
 }
 #FE{
@@ -205,6 +211,7 @@ position:relative;
    justify-content:center;
    border:1px solid black;
    transition:all 0.2s ease-in-out ;
+   font-family:'gabriola';
 }
 .lang:hover{
   transform:scale(1.3);
@@ -224,7 +231,8 @@ position:relative;
     display:table-column;
     box-sizing:border-box;
     padding:0;
-   
+   margin-top:0;
+   margin-bottom:0;
     height:100%;
     width:100%;
     color:white;
@@ -234,8 +242,17 @@ position:relative;
     list-style-type:none;
     
     width:100%;
-    border-bottom:1px solid black;
+    border-top:1px solid black;
     
+}
+
+
+#ChosenCat{
+    font-weight:bold;
+    font-family:'Courier New', Courier, monospace;
+    border-radius:0px 0px 20px 20px;
+    box-sizing:border-box;
+    background-color:brown;
 }
 
 .listLi{
@@ -248,7 +265,6 @@ position:relative;
     font-family:comic;
     display:flex;
 }
-
 
 
 
@@ -270,7 +286,7 @@ position:relative;
     border-right:1px solid black;
  z-index:30;
  box-shadow: 9px 2px 9px 7px rgba(0,0,0,0.54);
-    background-color: blueviolet;
+    background-color: rgb(83, 40, 17);
     border-radius:0px 0px 0px 7px;
 }
 
@@ -293,7 +309,7 @@ position:relative;
     
 }
 #searching::placeholder{
-  
+  font-family:'Courier New', Courier, monospace;
 }
 
 
@@ -308,8 +324,9 @@ textarea:focus, input:focus{
     flex-direction:column;
     flex-grow:1;
     background-color:aliceblue;
-    border-radius:0px 0px 7px 0px;
+    border-radius:0px 0px 6px 0px;
     height:100%;
+    overflow:Hidden;
 }
 #description{
     padding:1em;
@@ -318,14 +335,20 @@ textarea:focus, input:focus{
     height:50%;
     overflow-y:scroll;
     display:flex;
-    background-color: brown;
+    background-color: rgb(240, 240, 240);
     overflow:auto;
 }
 #pictures{
     padding:1em;
     display:flex;
     height:50%;
-    background-color:blue;
+    background-color:rgb(93, 93, 96);
     box-sizing:border-box;
 }
 
+@media (max-width:43em) {
+    #masterBox{
+        transform:scale(0.8,0.8);
+        min-width:fit-content;
+    };
+}
