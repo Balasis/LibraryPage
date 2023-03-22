@@ -2,46 +2,32 @@
 require_once "../CS/Cs.php";
 $Categ=$_GET['c'];
 $CodeName=$_GET['q'];
+ $whitelist=sqlsrv_query($conn,"SELECT name FROM sys.tables");
+ $DaWhiteList=array();//This variable will hold all the names of the tables
+ while($whitelistt=sqlsrv_fetch_array($whitelist,SQLSRV_FETCH_ASSOC)){
+    array_push($DaWhiteList,$whitelistt['name']);//here you push the names to var to create Whitelist
+ };//check if is in the list of the tables to avoid any kind of injection (extra text)
+ if (in_array($Categ,$DaWhiteList)){
+    $Daquer = " SELECT attributes,basicUse,extraInfo FROM $Categ WHERE tagName= ? ";
+    $params = array(&$CodeName);
+    $options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
+    $Daquer=sqlsrv_prepare($conn,$Daquer,$params,$options);
+    sqlsrv_execute($Daquer);
+
+    if( sqlsrv_execute( $Daquer ) === false ) {
+        die( print_r( sqlsrv_errors(), true));
+  }else if (sqlsrv_num_rows($Daquer)==0){
+        echo "nothing to show";
+  }else{
+    while($info=sqlsrv_fetch_array($Daquer,SQLSRV_FETCH_ASSOC)){
+        echo $info['attributes']." ".$info['basicUse']." ".$info['extraInfo'];
+    }
+  }
 
 
-$Daquer = " SELECT attributes,basicUse,extraInfo FROM $Categ WHERE tagName= '$CodeName' ";
-
-
-$params = array();
-$options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
-
-$Daquery= sqlsrv_query($conn,$Daquer,$params,$options);
 
 
 
-$rowCounter= sqlsrv_num_rows($Daquery);
-if ($rowCounter === false)
-   echo "Error in retrieveing row count.";
-else
-   echo $rowCounter;
-
-if ($rowCounter >0){
-    echo 'it has something';
-}else{
-    echo 'nothing here';
-   $test=sqlsrv_fetch_array($Daquery,SQLSRV_FETCH_ASSOC);
-   print_r($test);
-}
-
-/*if ($Daquery->sqlsrv_num_rows>0){
-    echo 'it has something';
-}else{
-    echo 'nothing here';
-}
-
-if (sqlsrv_num_rows($Daquery)>=0){
-
-while($YadaYada=sqlsrv_fetch_array($Daquery,SQLSRV_FETCH_ASSOC)){
-echo $YadaYada['attributes']." ".$YadaYada['basicUse']." ".$YadaYada['extraInfo'];
-}
-
-}else{
-    echo 'there are no rows you donut';
-}*/
+ }
 
 ?>
