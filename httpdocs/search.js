@@ -71,14 +71,13 @@ function getCodeInfo(get) {
     
 
 
-
+  let category=document.getElementById('ChosenCat').innerText;
 
 
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(get) {
-    let category=document.getElementById('ChosenCat').innerText;
-    console.log(category);
+    
       if (this.readyState == 4 && this.status == 200) {
       
       
@@ -87,7 +86,7 @@ function getCodeInfo(get) {
     };
     
     
-    xmlhttp.open("GET", "codeInfo?q=" + get+"c="+category, true);
+    xmlhttp.open("GET", "codeInfo?q=" + get+"&c="+category, true);
     xmlhttp.send();
     
   }
