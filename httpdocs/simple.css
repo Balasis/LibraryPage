@@ -25,7 +25,7 @@ background-color: rgb(0, 0, 0);
 width:100%;
 height:100%;
 background-image:url('img/bg.jpg');
-
+overflow:hidden;
 
 transition:all 1s;
 
@@ -295,7 +295,7 @@ background-repeat:no-repeat;
     width:100%;
     background-color:white;
     border-bottom:1px solid black;
-    height:2em;
+    height:2.1em;
     
     
 }
@@ -329,21 +329,125 @@ textarea:focus, input:focus{
     overflow:Hidden;
 }
 #description{
-    padding:1em;
+   
     box-sizing:border-box;
     border-bottom:1px solid black;
     height:50%;
-    overflow-y:scroll;
+    overflow:hidden;
     display:flex;
+    flex-direction:column;
     background-color: rgb(240, 240, 240);
     overflow:auto;
 }
+#descriptionTools {
+    height:2em;
+    width:3em;
+    background-color:rgb(65, 8, 144);
+    display:flex;
+    box-sizing: border-box;
+    padding-left:1em;
+    position:absolute;
+    overflow:hidden;
+    transition: width 1s;
+    border-radius:0px 5px 5px 0px;
+    z-index:55;
+    align-items:center;
+    justify-content:center;
+    
+    }
+#descriptionTools >div{
+    margin:auto;
+}
+#descriptionTools:hover {
+width:12em;
+    }
+#descriptionTools:hover #descriptionChange {
+    visibility:visible;
+    width:auto;
+}
+#descriptionTools:hover #descriptionConfirm {
+    visibility:visible;
+    width:auto;
+}
+#descriptionTools:hover #descriptionToolsArrow {
+    visibility:hidden;
+
+}
+#descriptionToolsArrow {
+        position:absolute;
+        right:0.5em;
+        padding-right:0.3em;
+        height:100%;
+        display: flex;
+        align-items:center;
+        color:white;
+        font-weight:bold;
+
+    }
+
+#descriptionChange {
+    visibility:hidden;
+    width:0em;
+    transition:width 1s;
+    overflow:hidden;
+    color:white;
+    font-weight: bold;
+    padding-left: 1em;
+    padding-right:1em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+}
+#descriptionChange:hover{
+    transform:scale(1.1);
+    cursor:grab;
+    width:fit-content;
+}
+
+#descriptionConfirm {
+    height:100%;
+    width:0em;
+    visibility:hidden;
+    transition:width 1s;
+    overflow:hidden;
+    color:white;
+    font-weight: bold;
+    padding-left: 1em;
+    padding-right:1em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#descriptionConfirm:hover{
+    transform:scale(1.1);
+    cursor:grab;
+    color:green;
+    width:fit-content;
+}
+#descriptionTextarea {
+width:100%;
+height:100%;
+padding:1.5em;
+padding-top:2.5em;
+box-sizing:border-box;
+overflow-x:hidden;
+overflow-y:auto;
+resize:none;
+text-align:left;
+}
+
+
 #pictures{
     padding:1em;
     display:flex;
     height:50%;
-    background-color:rgb(93, 93, 96);
+    background-color:rgb(255, 255, 255);
     box-sizing:border-box;
+    background-image:url('img/snoopy-programming.png');
+    background-position:50% 50%;
+    background-size:contain;
+    background-repeat:no-repeat;
 }
 
 @media (max-width:43em) {

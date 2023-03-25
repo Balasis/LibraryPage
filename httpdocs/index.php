@@ -1,4 +1,8 @@
+<?php 
+session_start();
 
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -39,8 +43,26 @@
                  </div>
 
                      <div id="viewTab">
-                            <div id="description"></div>
-                            <div id="pictures"></div>
+                            <div id="description">
+                                <div id="descriptionTools">
+                                    
+                                    <div id="descriptionChange">&#9997;</div>
+                                    <div id="descriptionConfirm"> &#10004;</div>
+                                    <div id="descriptionToolsArrow">&#8614;</div>
+                                </div>
+    <textarea id="descriptionTextarea" readonly>                          Welcome to your Private Local Code Library :D</textarea>
+                                </div>
+                            <div id="pictures">
+                                
+     <form id='picForm' enctype="multipart/form-data" style='position:absolute'>
+  <input type="file" id="fileToUpload" name="fileToUpload">
+  
+  <button style="visibility:hidden;" type="submit">Submit</button>
+</form>
+
+
+
+                            </div>
                     </div>
 
     </div>    

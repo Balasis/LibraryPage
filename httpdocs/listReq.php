@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../CS/Cs.php";
 $Categ=$_GET['q'];
 
@@ -15,11 +16,17 @@ $Categ=$_GET['q'];
     
     
     echo "<li id='ChosenCat'>".$Categ."</li>";
+    $_SESSION['CategoryOn']=$Categ;//category chosen
+   $_SESSION['TAG']="General ".$Categ;//tag chosen (if)
+   
+
+
+
     while($Fetchquerr=sqlsrv_fetch_array($Fetchque,SQLSRV_FETCH_ASSOC)){
         echo "<li>";
         echo "<a class='listLi' id='";
         echo htmlspecialchars($Fetchquerr['tagName'],ENT_QUOTES);
-        echo "'".'onclick="getCodeInfo(this.id)">'.htmlspecialchars($Fetchquerr['tagName'],ENT_QUOTES)."</a>";
+        echo "'".'onclick="getCodeInfo(this.id),getCodePic(this.id)">'.htmlspecialchars($Fetchquerr['tagName'],ENT_QUOTES)."</a>";
         echo "</li>";
     }
 
@@ -28,7 +35,7 @@ $Categ=$_GET['q'];
     echo "haha jokes on you injector";
  }
 
-
+session_write_close();
 
 
 ?>
