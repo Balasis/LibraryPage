@@ -332,7 +332,7 @@ textarea:focus, input:focus{
    
     box-sizing:border-box;
     border-bottom:1px solid black;
-    height:50%;
+    height:35%;
     overflow:hidden;
     display:flex;
     flex-direction:column;
@@ -441,14 +441,32 @@ text-align:left;
 #pictures{
     padding:1em;
     display:flex;
-    height:50%;
+    position:relative;
     background-color:rgb(255, 255, 255);
     box-sizing:border-box;
     background-image:url('img/snoopy-programming.png');
-    background-position:50% 50%;
-    background-size:contain;
+    background-position:0% 0%;
+    background-size:100% 100%;
     background-repeat:no-repeat;
+    flex-grow:1;
 }
+#Dalabel{
+    display:block;
+    position:absolute;
+    right:-0.5em;
+    transform-origin:right;
+    font-size:2em;
+    transition:all 1s;
+    
+}
+#Dalabel:hover{
+    transform:scale(2);
+    cursor:grab;
+}
+#fileToUpload{
+    visibility:hidden;
+}
+
 
 @media (max-width:43em) {
     #masterBox{

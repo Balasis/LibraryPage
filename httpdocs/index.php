@@ -54,7 +54,7 @@ session_start();
                                 </div>
                             <div id="pictures">
                                 
-                           
+       <label id='Dalabel' for="fileToUpload">&#9997;</label>                    
   <input type="file" id="fileToUpload" name="fileToUpload">
 
  

@@ -10,15 +10,12 @@ if (!isset($_SESSION['CATEGORY']) || !isset($_SESSION['TAG']) ){
 $category=$_SESSION['CATEGORY'];
 $tag= $_SESSION['TAG'];
 
-var_dump($_FILES);
-
-
 
 $ext = pathinfo($_FILES["imageHere"]["name"], PATHINFO_EXTENSION);
 
 
 
-if ($_FILES["imageHere"]["name"]=$tag.$ext){ 
+if ($_FILES["imageHere"]["name"]=$tag.".".$ext){ 
 
 
     
@@ -28,12 +25,13 @@ if ($_FILES["imageHere"]["name"]=$tag.$ext){
     if (!is_dir($target_dir)) {
       mkdir($target_dir);
     }
-    
-$target_file = $target_dir .($_FILES["imageHere"]["name"]);
+    $file_name=$_FILES["imageHere"]["name"];
+    $file_name=preg_replace('/[^a-zA-Z0-9_\-\.]/','',$file_name);
+$target_file = $target_dir .($file_name);
     move_uploaded_file($_FILES["imageHere"]["tmp_name"], $target_file);
 
 
-    $file_name=$_FILES["imageHere"]["name"];
+    
   
 
   

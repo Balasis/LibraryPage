@@ -161,7 +161,7 @@ function getCodePic(get) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(info) {  
       if (this.readyState == 4 && this.status == 200) {
-        console.log(info);
+      
         document.getElementById('descriptionTextarea').value=this.responseText;
     };  
   }
