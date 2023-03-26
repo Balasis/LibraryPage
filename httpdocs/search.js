@@ -6,18 +6,16 @@ window.onload=function(){
   document.getElementById('fileToUpload').addEventListener('change',function(){
 
    var imageHere= document.getElementById('fileToUpload').files[0];
-   
+   console.log(imageHere);
     var formData = new FormData();
   formData.append("imageHere", imageHere);
-  console.log(formData);
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "pictureURL.php", true); 
+  xhr.open("POST", "pictureURL"); 
   xhr.onload = function() {
     if (xhr.status == 200) {
    
-      console.log(this.responseText);
       document.getElementById('pictures').style.backgroundImage="url('"+this.responseText+"')";
-    
+
     } else {
       alert("Error: " + xhr.status);
     }
@@ -145,7 +143,6 @@ function getCodePic(get) {
   xmlhttp.onreadystatechange = function(get) {  
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById('pictures').style.backgroundImage="url('"+this.responseText+"')";
-      console.log(this.responseText);
     }
   };  
   xmlhttp.open("GET", "codePic?q=" + get, true);

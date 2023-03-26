@@ -3,42 +3,41 @@ session_start();
 require_once '../CS/Cs.php';
 
 if (!isset($_SESSION['CATEGORY']) || !isset($_SESSION['TAG']) ){
-    echo 'didntwork';
+  
 }else{
 
 
 $category=$_SESSION['CATEGORY'];
 $tag= $_SESSION['TAG'];
-$formData = file_get_contents('php://input');
+
+var_dump($_FILES);
+
+
+
+$ext = pathinfo($_FILES["imageHere"]["name"], PATHINFO_EXTENSION);
+
+
+
+if ($_FILES["imageHere"]["name"]=$tag.$ext){ 
+
 
     
-    parse_str($formData, $formFields);
 
-$katarew=$formFields['imageHere'];
-
-
-$ext = pathinfo($katarew["imageHere"]["name"], PATHINFO_EXTENSION);
-if ($katarew["imageHere"]["name"]=$tag.$ext){ 
-
-
+  
+    $target_dir = "img/".$category."/";
+    if (!is_dir($target_dir)) {
+      mkdir($target_dir);
+    }
     
+$target_file = $target_dir .($_FILES["imageHere"]["name"]);
+    move_uploaded_file($_FILES["imageHere"]["tmp_name"], $target_file);
+
+
+    $file_name=$_FILES["imageHere"]["name"];
+  
 
   
-    $targetDir = "img/".$category."/";
-
-$target_file = $target_dir .($katarew["imageHere"]["name"]);
-    move_uploaded_file($katarew["imageHere"]["tmp_name"], $target_file);
-
-
-
-  
-  if (!is_dir($targetDir)) {
-    mkdir($targetDir);
-  }
-  
-  move_uploaded_file($tmp_name, $targetDir . $file_name);
-  $thePath=$targetDir.$file_name;
-  echo $thePath;
+  $thePath=$target_dir.$file_name;
   $Daquer = " UPDATE $category SET pictureURL = ? WHERE tagName= '$tag' ";
     $params = array(&$thePath);
     $options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );

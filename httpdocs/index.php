@@ -55,7 +55,7 @@ session_start();
                             <div id="pictures">
                                 
                            
-  <input type="file" id="fileToUpload" name="fileToUpload"  accept=".png, .jpg, .jpeg" />
+  <input type="file" id="fileToUpload" name="fileToUpload">
 
  
 
