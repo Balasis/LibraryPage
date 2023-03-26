@@ -1,10 +1,31 @@
   
 document.getElementById('descriptionChange').addEventListener('click',textareaEnable,false);
+
 window.onload=function(){
   
   document.getElementById('fileToUpload').addEventListener('change',function(){
+
+   var imageHere= document.getElementById('fileToUpload').files[0];
+   
+    var formData = new FormData();
+  formData.append("imageHere", imageHere);
+  console.log(formData);
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "pictureURL.php", true); 
+  xhr.onload = function() {
+    if (xhr.status == 200) {
+   
+      console.log(this.responseText);
+      document.getElementById('pictures').style.backgroundImage="url('"+this.responseText+"')";
     
-     document.getElementById('picForm').submit();
+    } else {
+      alert("Error: " + xhr.status);
+    }
+  };
+
+  
+  xhr.send(formData);
+  
 })
 }
 
@@ -109,7 +130,7 @@ function getCodeInfo(get) {
     
       if (this.readyState == 4 && this.status == 200) {
       
-        document.getElementById('descriptionTextarea').innerText=this.responseText;
+        document.getElementById('descriptionTextarea').value=this.responseText;
       }
     };
     
@@ -133,18 +154,26 @@ function getCodePic(get) {
   }
 
 
-
+  document.getElementById('descriptionConfirm').addEventListener('click',
+    function(){basicInfo(document.getElementById('descriptionTextarea').value)},false);
 
   // AJAX for change/add the basicInfo of a tag
   function basicInfo(info){
-    var xmlhttp= new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(get) {  
+    
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function(info) {  
       if (this.readyState == 4 && this.status == 200) {
-          
-      }
+        console.log(info);
+        document.getElementById('descriptionTextarea').value=this.responseText;
     };  
+  }
     xmlhttp.open("GET", "basicInfo?q=" + info, true);
     xmlhttp.send();
 
 
-  }
+  
+}
+
+
+

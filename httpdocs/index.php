@@ -54,12 +54,10 @@ session_start();
                                 </div>
                             <div id="pictures">
                                 
-     <form id='picForm' enctype="multipart/form-data" style='position:absolute'>
-  <input type="file" id="fileToUpload" name="fileToUpload">
-  
-  <button style="visibility:hidden;" type="submit">Submit</button>
-</form>
+                           
+  <input type="file" id="fileToUpload" name="fileToUpload"  accept=".png, .jpg, .jpeg" />
 
+ 
 
 
                             </div>

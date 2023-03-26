@@ -16,10 +16,9 @@ $Categ=$_GET['q'];
     
     
     echo "<li id='ChosenCat'>".$Categ."</li>";
-    $_SESSION['CategoryOn']=$Categ;//category chosen
-   $_SESSION['TAG']="General ".$Categ;//tag chosen (if)
+    $_SESSION['CATEGORY']=$Categ;//category chosen
+   $_SESSION['TAG']="" ;//tag chosen (if);
    
-
 
 
     while($Fetchquerr=sqlsrv_fetch_array($Fetchque,SQLSRV_FETCH_ASSOC)){
