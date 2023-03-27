@@ -16,7 +16,7 @@ $deleteConfirmation=$_GET['q'];
                 $getPicPath=sqlsrv_query($conn,"SELECT pictureURL FROM $category  WHERE tagName='$tag' ");
                 while($getIt=sqlsrv_fetch_array($getPicPath,SQLSRV_FETCH_ASSOC)){
 
-                    $pathToDelPic=$getIt['pictureUrl'];
+                    $pathToDelPic=$getIt['pictureURL'];
                     unlink($pathToDelPic);
 
 

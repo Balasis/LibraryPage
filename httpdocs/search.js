@@ -100,7 +100,7 @@ if (confirmDel == true){
 window.onload=function(){
   
   document.getElementById('newTag').addEventListener('focus',function(){
-    
+    document.getElementById('arrowsHolder').style.left="0em";
             document.getElementById('addTagTools').style.width="12em";
             document.getElementById('newTag').style.visibility="visible";
             document.getElementById('addTagChange').style.visibility="visible";
@@ -113,7 +113,7 @@ window.onload=function(){
   
   document.getElementById('newTag').addEventListener('blur',function(){
   
-    
+    document.getElementById('arrowsHolder').style.left="";
     document.getElementById('addTagTools').style.width="";
     document.getElementById('newTag').style.visibility="";
     document.getElementById('addTagChange').style.visibility="";
