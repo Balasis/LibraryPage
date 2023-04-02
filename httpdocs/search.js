@@ -295,7 +295,8 @@ function getCodePic(get) {
         document.getElementById('descriptionTextarea').value=this.responseText;
     };  
   }
-    xmlhttp.open("GET", "basicInfo?q=" + info, true);
+    encInfo=encodeURIComponent(info);
+    xmlhttp.open("GET", "basicInfo?q=" + encInfo, true);
     xmlhttp.send();
 
 
@@ -309,8 +310,7 @@ function getCodePic(get) {
 function focusedTag(){
 const findAllLi=document.getElementsByClassName('listLi');
 for (i=0;i<findAllLi.length;i++){
-  console.log(findAllLi[i].innerText);
-  console.log(document.getElementById('TagLabel').innerText)
+  
    if (findAllLi[i].innerText==document.getElementById('TagLabel').innerText){
     findAllLi[i].parentNode.style.backgroundColor="green";
    }else{

@@ -9,11 +9,12 @@ require_once '../CS/Cs.php';
    
 $category=$_SESSION['CATEGORY'];
 $tag= $_SESSION['TAG'];
-$basicInfo=$_GET['q'];
+$basicInfo=urlDecode($_GET['q']);
 
 
     $Daquer = " UPDATE $category SET basicUse = ? WHERE tagName= '$tag' ";
     $params = array(&$basicInfo);
+    
     $options =  array( "Scrollable" => SQLSRV_CURSOR_KEYSET );
     $Daquerr=sqlsrv_prepare($conn,$Daquer,$params,$options);
     sqlsrv_execute($Daquerr);
@@ -29,7 +30,7 @@ $basicInfo=$_GET['q'];
     $seQ= sqlsrv_query($conn,$se);
 
  while($seQQ=sqlsrv_fetch_array($seQ,SQLSRV_FETCH_ASSOC)){
-        echo $seQQ['basicUse'];
+    echo nl2br($seQQ['basicUse']);
     }
             
 }
