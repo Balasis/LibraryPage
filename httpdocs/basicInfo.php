@@ -30,7 +30,7 @@ $basicInfo=urlDecode($_GET['q']);
     $seQ= sqlsrv_query($conn,$se);
 
  while($seQQ=sqlsrv_fetch_array($seQ,SQLSRV_FETCH_ASSOC)){
-    echo nl2br($seQQ['basicUse']);
+    echo $seQQ['basicUse'];
     }
             
 }
