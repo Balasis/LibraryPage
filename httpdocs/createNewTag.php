@@ -2,7 +2,7 @@
 session_start();
 require_once "../CS/Cs.php";
 $Categ=$_SESSION['CATEGORY'];
-$NewCode=$_GET['q'];
+$NewCode=urldecode($_GET['q']);
 
 
 

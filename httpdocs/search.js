@@ -9,7 +9,7 @@ document.getElementById('descriptionChange').addEventListener('click',textareaEn
 
 document.getElementById('addTagConfirm').addEventListener('click',createNewTag,false);
 function createNewTag(){
-var theText=document.getElementById('newTag').value;
+var theText=encodeURIComponent(document.getElementById('newTag').value);
  
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -35,7 +35,7 @@ xmlhttp.onreadystatechange = function() {
   }
 
 
-
+  
 xmlhttp.open("GET", "createNewTag?q=" + theText, true);
 xmlhttp.send();
 
