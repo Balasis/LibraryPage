@@ -9,7 +9,8 @@ document.getElementById('descriptionChange').addEventListener('click',textareaEn
 
 document.getElementById('addTagConfirm').addEventListener('click',createNewTag,false);
 function createNewTag(){
-var theText=encodeURIComponent(document.getElementById('newTag').value);
+  var theText=document.getElementById('newTag').value;
+var theTextt=encodeURIComponent(theText);
  
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
@@ -36,7 +37,7 @@ xmlhttp.onreadystatechange = function() {
 
 
   
-xmlhttp.open("GET", "createNewTag?q=" + theText, true);
+xmlhttp.open("GET", "createNewTag?q=" + theTextt, true);
 xmlhttp.send();
 
 };
@@ -263,7 +264,7 @@ function getCodeInfo(get) {
     };
     
     
-    xmlhttp.open("GET", "codeInfo?q=" + get, true);
+    xmlhttp.open("GET", "codeInfo?q=" + encodeURIComponent(get), true);
     xmlhttp.send();
     
   }
@@ -283,11 +284,11 @@ function getCodePic(get) {
 
   document.getElementById('descriptionConfirm').addEventListener('click',
     function(){basicInfo(document.getElementById('descriptionTextarea').value)},false);
-
+   
   // AJAX for change/add the basicInfo of a tag
   function basicInfo(info){
     
-    
+    console.log("Entry Point: "+info);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function(info) {  
       if (this.readyState == 4 && this.status == 200) {
@@ -296,6 +297,7 @@ function getCodePic(get) {
     };  
   }
     encInfo=encodeURIComponent(info);
+    console.log('enCodedInfo: '+encInfo);
     xmlhttp.open("GET", "basicInfo?q=" + encInfo, true);
     xmlhttp.send();
 

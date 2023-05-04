@@ -2,7 +2,7 @@
 session_start();
 require_once "../CS/Cs.php";
 $Categ=$_SESSION['CATEGORY'];
-$CodeName=$_GET['q'];
+$CodeName=urldecode($_GET['q']);
  $whitelist=sqlsrv_query($conn,"SELECT name FROM sys.tables");
  $DaWhiteList=array();//This variable will hold all the names of the tables
  while($whitelistt=sqlsrv_fetch_array($whitelist,SQLSRV_FETCH_ASSOC)){
