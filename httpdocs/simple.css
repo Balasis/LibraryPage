@@ -369,6 +369,7 @@ textarea:focus, input:focus{
     background-color: rgb(240, 240, 240);
     overflow:auto;
     position:relative;
+    transition:all 0.3s;
 }
 
 #TagLabel{
@@ -695,7 +696,7 @@ text-align:left;
 
 
 #pictures{
-    padding:1em;
+    
     display:flex;
     position:relative;
     background-color:rgb(255, 255, 255);
@@ -704,9 +705,29 @@ text-align:left;
     background-position:0% 0%;
     background-size:100% 100%;
     background-repeat:no-repeat;
-    flex-grow:1;
+    height:65%;
+    transition:all 0.3s;
+    
+}
+#hideOrShowPic{
+    display:block;
+    position:absolute;
+    right:0em;
+    transform-origin:right;
+    font-size:1em;
+    transition:all 0.3s;
+    margin-top:15em;
+    border:1px solid black;
+    border-radius:5px 0px 0px 5px; 
+    overflow:hidden;
+    z-index:10;
+}
+#hideOrShowPic:hover{
+cursor:grab;
+
 }
 #Dalabel{
+    margin-top:1em;
     display:block;
     position:absolute;
     right:-0.5em;
@@ -715,6 +736,7 @@ text-align:left;
     transition:all 1s;
     
 }
+
 #Dalabel:hover{
     transform:scale(2);
     cursor:grab;

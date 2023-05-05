@@ -1,5 +1,22 @@
 
+document.getElementById('hideOrShowPic').addEventListener('click',hideOrShowPic,false);
+function hideOrShowPic(){
 
+  var HoSP= document.getElementById('hideOrShowPic');
+  var Pic=document.getElementById('pictures');
+  var Descr=document.getElementById('description');
+  if (Pic.style.height == "65%" || Pic.style.height == ""){
+    console.log('wtf');
+  Pic.style.height="0%";
+  HoSP.innerText="SHOW";
+  Descr.style.height="100%";
+  }else if(Pic.style.height == "0%"){
+    Pic.style.height="65%";
+    HoSP.innerText="HIDE";
+    Descr.style.height="35%";
+  }
+  
+}
 
 document.getElementById('descriptionChange').addEventListener('click',textareaEnable,false);
 

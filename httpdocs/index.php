@@ -76,8 +76,9 @@ session_start();
 
     <textarea id="descriptionTextarea" readonly>                          Welcome to your Private Local Code Library :D</textarea>
                                 </div>
+                                <button id='hideOrShowPic'>Hide</button>
                             <div id="pictures">
-                                
+        
        <label id='Dalabel' for="fileToUpload">&#9997;</label>                    
   <input type="file" id="fileToUpload" name="fileToUpload">
 
